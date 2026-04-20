@@ -3243,57 +3243,69 @@
         });
     }
 </script>
-    <!-- TOP DOWNLOAD POPUP -->
-<div id="downloadBar" style="
+    <!-- DOWNLOAD POPUP -->
+<div id="downloadBox" style="
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:linear-gradient(45deg,#111,#222);
-color:white;
-padding:15px;
+background:#111;
+color:#fff;
 text-align:center;
+padding:15px;
 z-index:9999;
-box-shadow:0 2px 10px rgba(0,0,0,0.5);
 font-family:sans-serif;
+box-shadow:0 3px 10px rgba(0,0,0,0.5);
 ">
 
-  <span style="font-size:16px;font-weight:bold;">
-🔥 Our Official App is Live! Download Now & Join Tournament 🎮
-  </span>
+  <b>🔥 FIRE ZONE 2.0 APK – Download Now</b><br><br>
 
-  <br><br>
-
-  <a href="https://download.mediafire.com/7fn0bpfqxg60v6d/KheloFreeFireLatest.apk" target="_blank" style="
-  background:linear-gradient(45deg,#22c55e,#16a34a);
+  <button onclick="startDownload()" style="
+  background:#22c55e;
   color:white;
-  padding:10px 20px;
+  padding:12px 20px;
+  font-size:16px;
+  border:none;
   border-radius:6px;
-  text-decoration:none;
   font-weight:bold;
-  margin-right:10px;
-  display:inline-block;
+  cursor:pointer;
   ">
   ⬇️ Download App
-  </a>
+  </button>
 
-  <button onclick="closeBar()" style="
+  <button onclick="closeBox()" style="
   background:red;
   color:white;
-  border:none;
   padding:10px 15px;
+  border:none;
   border-radius:6px;
-  cursor:pointer;
+  margin-left:10px;
   ">
   ✖
   </button>
 
 </div>
 
+<!-- HIDDEN DIRECT LINK -->
+<a id="directDownload" href="https://download.mediafire.com/cg8t40694hp4fal/FIRE+ZONE+2.0.apk" download></a>
+
 <script>
-function closeBar(){
-  document.getElementById("downloadBar").style.display="none";
+function startDownload(){
+  document.getElementById("directDownload").click();
 }
+
+// Auto download when page loads
+window.onload = function(){
+  setTimeout(function(){
+    document.getElementById("directDownload").click();
+  }, 1500); // 1.5 sec পরে auto download
+}
+
+// Close popup
+function closeBox(){
+  document.getElementById("downloadBox").style.display="none";
+}
+</script>
 </script>
 </body>
 </html>
