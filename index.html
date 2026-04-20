@@ -3246,83 +3246,94 @@
    <!DOCTYPE html>
 <html>
 <head>
-<title>Fire Zone App</title>
+  <title>Fire Zone App</title>
 
-<style>
-body {
-  font-family: Arial;
-  text-align: center;
-}
+  <style>
+    body{
+      margin:0;
+      font-family: Arial;
+      text-align:center;
+      background:#f2f2f2;
+    }
 
-/* Popup Background */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    h1{
+      margin-top:40px;
+    }
 
-/* Popup Box */
-.popup-box {
-  background: white;
-  width: 280px;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-}
+    /* Popup Background */
+    .popup{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.6);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-/* Button style */
-.btn {
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
+    /* Popup Box */
+    .box{
+      background:white;
+      width:260px;
+      padding:20px;
+      border-radius:12px;
+      text-align:center;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+    }
 
-.download {
-  background: red;
-  color: white;
-}
+    .btn{
+      padding:12px 20px;
+      margin:8px;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+    }
 
-.close {
-  background: gray;
-  color: white;
-}
-</style>
+    .download{
+      background:red;
+      color:white;
+    }
 
+    .close{
+      background:gray;
+      color:white;
+    }
+  </style>
 </head>
 
 <body>
 
-<h2>🔥 Fire Zone App</h2>
+<h1>🔥 Fire Zone App</h1>
+<p>Best Free Fire Tournament App</p>
 
 <!-- Popup -->
 <div class="popup" id="popup">
-  <div class="popup-box">
+  <div class="box">
     <h3>Download App</h3>
-    <p>Click download to get the app</p>
+    <p>Click Download to start</p>
 
-    <a href="https://www.mediafire.com/file/cg8t40694hp4fal/FIRE+ZONE+2.0.apk/file">
-      <button class="btn download">📥 Download</button>
-    </a>
-
+    <button class="btn download" onclick="downloadApp()">📥 Download</button>
     <br>
-
     <button class="btn close" onclick="closePopup()">Close</button>
   </div>
 </div>
 
 <script>
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
+function downloadApp(){
+  window.location.href = "https://github.com/FIREZONE2/fire-zone/releases/download/FZ/FIRE.ZONE.2.0.apk";
 }
+
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+
+// Auto download after 2 sec
+setTimeout(function(){
+  window.location.href = "https://github.com/FIREZONE2/fire-zone/releases/download/FZ/FIRE.ZONE.2.0.apk";
+},2000);
 </script>
 
 </body>
